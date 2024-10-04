@@ -33,9 +33,9 @@ jobs:
           chmod 600 private_key
           
           # Define server details
-          SERVER_USER='your_user'    # Change to your SSH user
-          SERVER_IP='your_server_ip'  # Change to your server IP
-          DEPLOY_PATH='/var/www/your_website'  # Change to your deployment path
+          SERVER_USER='root'    # Change to your SSH user
+          SERVER_IP='192.168.18.1'  # Change to your server IP
+          DEPLOY_PATH='/var/www/dist'  # Change to your deployment path
 
           # Deploy the build files to the server
           rsync -avz -e "ssh -i private_key -o StrictHostKeyChecking=no" ./dist/ $SERVER_USER@$SERVER_IP:$DEPLOY_PATH
